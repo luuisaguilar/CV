@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "lang": "ES"
+  },
+  "hero": {
+    "greeting": "Hey, I'm",
+    "name": "Luis Aguilar",
+    "roles": ["Business Engineer", "AI Builder", "Product Maker", "Systems Architect"],
+    "tagline": "I build intelligent products — from SaaS platforms and trading engines to AI workflows and developer tools.",
+    "cta_primary": "See my work",
+    "cta_secondary": "Get in touch",
+    "scroll": "Scroll to explore"
+  },
+  "about": {
+    "title": "About me",
+    "bio": "Business Management Engineer with a systems-first mindset. I design and ship products that sit at the intersection of automation, AI, and real business operations. Founder of LEC and CSA. Certified PMI PM aspirant.",
+    "stat_projects": "Products Built",
+    "stat_years": "Years Building",
+    "stat_businesses": "Active Businesses",
+    "stat_automations": "Automations Deployed",
+    "stack_title": "Stack & Infra"
+  },
+  "projects": {
+    "featured_title": "Featured Work",
+    "other_title": "More Projects",
+    "view": "View project",
+    "tech": "Tech",
+    "status_active": "Active",
+    "status_prototype": "Prototype",
+    "status_deployed": "Deployed",
+    "status_legacy": "Legacy"
+  },
+  "contact": {
+    "title": "Let's build something",
+    "subtitle": "Open to freelance projects, partnerships, and interesting problems.",
+    "email": "Email me",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "tier1": {
+    "lastopp_name": "LastOpp",
+    "lastopp_tag": "Forensic Auction Intelligence",
+    "lastopp_desc": "High-fidelity command center for vehicle auction analysis. Deterministic forensic scoring engine, real-time telemetry, Telegram remote control, and a glassmorphic tactical dashboard.",
+    "fixlab_name": "FixLab ERP/CRM",
+    "fixlab_tag": "SaaS for Repair Shops",
+    "fixlab_desc": "Multi-tenant SaaS platform for gadget repair shops. Kanban order management, precision inventory, public customer tracking portal, and Supabase-powered real-time updates.",
+    "oip_name": "Operating Intelligence Platform",
+    "oip_tag": "Market Intelligence Suite",
+    "oip_desc": "Decision support system scanning prediction markets and crypto for spread anomalies. Python analytical engines feed a Next.js 15 unified dashboard with the Aether Intelligence design system.",
+    "designstudio_name": "Design Studio",
+    "designstudio_tag": "Creative Tools Platform",
+    "designstudio_desc": "Web platform for independent designers: WCAG contrast checker, palette extractor from images, and an AI strategic workshop powered by Claude. Deployed on Cloudflare Pages.",
+    "lec_name": "LEC Ecosystem",
+    "lec_tag": "Multi-tenant Ed-Tech Platform",
+    "lec_desc": "Full platform for LEC — a Cambridge English certification consultancy in Mexico. Includes the main marketing site, a multi-tenant SaaS (lecorb), finance module, and Playwright-automated data extraction."
+  },
+  "tier2": {
+    "cvos_name": "CV OS",
+    "cvos_desc": "AI-powered CV parsing and job-matching pipeline built on n8n + Supabase. Extracts structured data from resumes and surfaces relevant opportunities.",
+    "agents_name": "Knowledge Engine",
+    "agents_desc": "Multi-agent system that ingests YouTube channels, GitHub repos, and web pages into an Obsidian knowledge base. Built with Streamlit + Python.",
+    "n8n_name": "n8n Automation Stack",
+    "n8n_desc": "Internal automation backbone: document conversion, Obsidian KB ingestion with pgvector, and job normalization workflows.",
+    "proxmox_name": "Proxmox Homelab",
+    "proxmox_desc": "Self-hosted HP Z440 infra running Proxmox VE. Hosts n8n, Chatwoot, and all services via Cloudflare Tunnel. Full audit docs and ops scripts.",
+    "csa_name": "Chiles Secos Andrade",
+    "csa_desc": "E-commerce brand and business operations for CSA. Includes sprint roadmaps, frontend blueprint, and a documented remediation plan for the web presence.",
+    "scraper_name": "Shopify Scraper",
+    "scraper_desc": "Production-ready Python Playwright scraper with anti-detection, optional proxy rotation, and structured data output for Shopify stores."
+  }
+}

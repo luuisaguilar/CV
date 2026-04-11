@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "lang": "EN"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Luis Aguilar",
+    "roles": ["Ingeniero de Negocio", "Builder de IA", "Product Maker", "Arquitecto de Sistemas"],
+    "tagline": "Construyo productos inteligentes — desde plataformas SaaS y motores de trading hasta workflows de IA y herramientas para developers.",
+    "cta_primary": "Ver mi trabajo",
+    "cta_secondary": "Hablemos",
+    "scroll": "Desliza para explorar"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "bio": "Ingeniero en Gestión Empresarial con mentalidad de sistemas. Diseño y lanzo productos en la intersección de automatización, IA y operaciones de negocio reales. Fundador de LEC y CSA. Aspirante a PM certificado por PMI.",
+    "stat_projects": "Productos Construidos",
+    "stat_years": "Años Construyendo",
+    "stat_businesses": "Negocios Activos",
+    "stat_automations": "Automatizaciones Desplegadas",
+    "stack_title": "Stack e Infraestructura"
+  },
+  "projects": {
+    "featured_title": "Trabajo Destacado",
+    "other_title": "Más Proyectos",
+    "view": "Ver proyecto",
+    "tech": "Tech",
+    "status_active": "Activo",
+    "status_prototype": "Prototipo",
+    "status_deployed": "Desplegado",
+    "status_legacy": "Legacy"
+  },
+  "contact": {
+    "title": "Construyamos algo",
+    "subtitle": "Abierto a proyectos freelance, partnerships y problemas interesantes.",
+    "email": "Escríbeme",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "tier1": {
+    "lastopp_name": "LastOpp",
+    "lastopp_tag": "Inteligencia Forense de Subastas",
+    "lastopp_desc": "Centro de comando de alta fidelidad para análisis de subastas de vehículos. Motor de scoring forense determinístico, telemetría en tiempo real, control remoto por Telegram y dashboard táctico glassmórfico.",
+    "fixlab_name": "FixLab ERP/CRM",
+    "fixlab_tag": "SaaS para Talleres de Reparación",
+    "fixlab_desc": "Plataforma SaaS multi-tenant para talleres de gadgets. Gestión Kanban de órdenes, inventario de precisión, portal público de rastreo para clientes y actualizaciones en tiempo real con Supabase.",
+    "oip_name": "Operating Intelligence Platform",
+    "oip_tag": "Suite de Inteligencia de Mercados",
+    "oip_desc": "Sistema de soporte de decisiones que escanea mercados de predicción y crypto en busca de anomalías. Motores Python alimentan un dashboard unificado en Next.js 15 con el design system Aether Intelligence.",
+    "designstudio_name": "Design Studio",
+    "designstudio_tag": "Plataforma de Herramientas Creativas",
+    "designstudio_desc": "Plataforma web para diseñadores independientes: verificador de contraste WCAG, extractor de paleta desde imágenes y workshop estratégico con IA usando Claude. Desplegado en Cloudflare Pages.",
+    "lec_name": "Ecosistema LEC",
+    "lec_tag": "Plataforma Ed-Tech Multi-tenant",
+    "lec_desc": "Plataforma completa para LEC — consultora de certificaciones Cambridge en México. Incluye sitio principal, SaaS multi-tenant (lecorb), módulo de finanzas y extracción automatizada de datos con Playwright."
+  },
+  "tier2": {
+    "cvos_name": "CV OS",
+    "cvos_desc": "Pipeline de parsing de CVs y matching de empleos impulsado por IA, construido con n8n + Supabase. Extrae datos estructurados de currículums y detecta oportunidades relevantes.",
+    "agents_name": "Motor de Conocimiento",
+    "agents_desc": "Sistema multi-agente que ingesta canales de YouTube, repositorios de GitHub y páginas web hacia una base de conocimiento en Obsidian. Construido con Streamlit + Python.",
+    "n8n_name": "Stack de Automatización n8n",
+    "n8n_desc": "Backbone de automatización interna: conversión de documentos, ingesta KB con pgvector y workflows de normalización de empleos.",
+    "proxmox_name": "Homelab Proxmox",
+    "proxmox_desc": "Infra self-hosted en HP Z440 corriendo Proxmox VE. Aloja n8n, Chatwoot y todos los servicios vía Cloudflare Tunnel. Docs de auditoría completos y scripts de operaciones.",
+    "csa_name": "Chiles Secos Andrade",
+    "csa_desc": "Marca de e-commerce y operaciones de negocio para CSA. Incluye roadmaps de sprints, blueprint de frontend y plan de remediación documentado para la presencia web.",
+    "scraper_name": "Scraper Shopify",
+    "scraper_desc": "Scraper Python con Playwright listo para producción: anti-detección, rotación de proxies opcional y salida de datos estructurados para tiendas Shopify."
+  }
+}
