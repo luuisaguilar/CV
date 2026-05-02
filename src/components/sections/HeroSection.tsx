@@ -4,24 +4,29 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import MagneticButton from "@/components/ui/MagneticButton";
+import AvatarFrame from "@/components/ui/AvatarFrame";
 
-const HeroCanvas = dynamic(() => import("@/components/canvas/HeroCanvas"), {
+const DotField = dynamic(() => import("@/components/canvas/DotField"), {
   ssr: false,
   loading: () => null,
 });
 
-const ROLES = ["Business Engineer", "AI Builder", "Product Maker", "Systems Architect"];
-
 export default function HeroSection() {
   const t = useTranslations("hero");
+  const tCommon = useTranslations("common");
   const roles = t.raw("roles") as string[];
   const [roleIdx, setRoleIdx] = useState(0);
   const [visible, setVisible] = useState(true);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
 
-  // Cycle through roles with fade
+  // Cycle through roles with fade — pauses for prefers-reduced-motion users
   useEffect(() => {
+    const mq = typeof window !== "undefined"
+      ? window.matchMedia("(prefers-reduced-motion: reduce)")
+      : null;
+    if (mq?.matches) return;
+
     const interval = setInterval(() => {
       setVisible(false);
       setTimeout(() => {
@@ -59,8 +64,8 @@ export default function HeroSection() {
       }}
       className="hero-gradient"
     >
-      {/* 3D Canvas background */}
-      <HeroCanvas />
+      {/* Interactive dot field background */}
+      <DotField />
 
       {/* Content */}
       <div
@@ -169,7 +174,7 @@ export default function HeroSection() {
             </MagneticButton>
 
             <MagneticButton
-              href="#contact"
+              href="/cv.pdf"
               className=""
               style={{
                 padding: "0.9rem 2rem",
@@ -181,40 +186,43 @@ export default function HeroSection() {
                 fontSize: "0.9rem",
                 textDecoration: "none",
                 transition: "background 0.25s, border-color 0.25s",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
               }}
             >
-              {t("cta_secondary")}
+              <span aria-hidden="true">↓</span>
+              {tCommon("download_cv")}
+            </MagneticButton>
+
+            <MagneticButton
+              href="#contact"
+              className=""
+              style={{
+                padding: "0.9rem 2rem",
+                borderRadius: "999px",
+                background: "transparent",
+                color: "#a0a0c0",
+                fontWeight: 600,
+                fontSize: "0.9rem",
+                textDecoration: "none",
+                transition: "color 0.25s",
+              }}
+            >
+              {t("cta_secondary")} →
             </MagneticButton>
           </div>
         </div>
 
-        {/* Right: spacer (3D canvas fills the bg) */}
+        {/* Right: avatar frame */}
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          {/* Decorative ring */}
-          <div
-            style={{
-              width: "320px",
-              height: "320px",
-              borderRadius: "50%",
-              border: "1px solid rgba(124,58,237,0.12)",
-              position: "relative",
-              animation: "spin 20s linear infinite",
-            }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                top: "-4px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "8px",
-                height: "8px",
-                borderRadius: "50%",
-                background: "#7C3AED",
-                boxShadow: "0 0 12px #7C3AED",
-              }}
-            />
-          </div>
+          <AvatarFrame
+            // To use a real photo, drop a square image at /public/avatar.jpg
+            // and pass it as `src="/avatar.jpg"`. Until then the initials fallback renders.
+            alt={t("name")}
+            initials="LA"
+            size={340}
+          />
         </div>
       </div>
 

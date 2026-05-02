@@ -46,6 +46,23 @@ body {
   cursor: none;
 }
 
+/* Restore native cursor on touch devices and when motion is reduced */
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  body { cursor: auto; }
+  #cursor-dot, #cursor-ring { display: none !important; }
+}
+
+/* Honor prefers-reduced-motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
 /* ── Custom Cursor ── */
 #cursor-dot {
   position: fixed;
@@ -162,5 +179,55 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
-  opacity: 0.3;
+  opacity: 0.18;
+}
+
+/* ── Global dot grid (engineering blueprint feel) ── */
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at center, rgba(124,58,237,0.10) 0.9px, transparent 1.4px);
+  background-size: 32px 32px;
+  background-position: 0 0;
+  /* Fade out at the very top so the hero gradient breathes */
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0, #000 280px, #000 100%);
+  mask-image:
+    linear-gradient(to bottom, transparent 0, #000 280px, #000 100%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+/* Section dividers — gradient hairline between sections */
+.section-divider {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(124,58,237,0) 8%,
+    rgba(124,58,237,0.55) 30%,
+    rgba(0,212,170,0.55) 50%,
+    rgba(255,107,53,0.45) 70%,
+    rgba(124,58,237,0) 92%,
+    transparent 100%
+  );
+}
+.section-divider::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #7C3AED;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 12px rgba(124,58,237,0.6);
 }

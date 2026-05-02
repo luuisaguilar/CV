@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { TIER2_PROJECTS } from "@/lib/tokens";
+import ProjectLinks from "@/components/ui/ProjectLinks";
 
 const STATUS_COLORS: Record<string, string> = {
   active: "#00D4AA",
@@ -173,6 +174,15 @@ export default function ProjectsTier2() {
                   </span>
                 ))}
               </div>
+
+              <ProjectLinks
+                github={project.github}
+                githubPolicy={project.githubPolicy}
+                demo={project.demo}
+                demoPolicy={project.demoPolicy}
+                color={project.color}
+                compact
+              />
             </div>
           );
         })}

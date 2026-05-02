@@ -10,6 +10,15 @@ export default function CustomCursor() {
   const raf = useRef<number>(0);
 
   useEffect(() => {
+    // Skip cursor entirely on touch / coarse pointers / reduced-motion users.
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    const coarsePointer = window.matchMedia(
+      "(hover: none), (pointer: coarse)"
+    ).matches;
+    if (reducedMotion || coarsePointer) return;
+
     const onMove = (e: MouseEvent) => {
       mouse.current = { x: e.clientX, y: e.clientY };
       if (dotRef.current) {

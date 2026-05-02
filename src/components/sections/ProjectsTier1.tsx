@@ -3,6 +3,8 @@
 import { useEffect, useRef, MouseEvent } from "react";
 import { useTranslations } from "next-intl";
 import { TIER1_PROJECTS } from "@/lib/tokens";
+import ProjectLinks from "@/components/ui/ProjectLinks";
+import ProjectThumb from "@/components/ui/ProjectThumb";
 
 // 3D Tilt card
 function TiltCard({
@@ -28,13 +30,14 @@ function TiltCard({
     const cy = rect.height / 2;
     const rotX = ((y - cy) / cy) * -8;
     const rotY = ((x - cx) / cx) * 8;
-    // Glare
+    // Spotlight + glare
     const glareX = (x / rect.width) * 100;
     const glareY = (y / rect.height) * 100;
     card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.02)`;
     card.style.setProperty("--glare-x", `${glareX}%`);
     card.style.setProperty("--glare-y", `${glareY}%`);
-    card.style.setProperty("--glare-opacity", "0.06");
+    card.style.setProperty("--glare-opacity", "0.14");
+    card.style.setProperty("--spot-opacity", "0.55");
   };
 
   const onMouseLeave = () => {
@@ -42,6 +45,7 @@ function TiltCard({
       cardRef.current.style.transform =
         "perspective(900px) rotateX(0) rotateY(0) scale(1)";
       cardRef.current.style.setProperty("--glare-opacity", "0");
+      cardRef.current.style.setProperty("--spot-opacity", "0");
     }
   };
 
@@ -67,14 +71,28 @@ function TiltCard({
         (e.currentTarget as HTMLDivElement).style.boxShadow = `0 20px 60px ${colorDim}`;
       }}
     >
-      {/* Glare layer */}
+      {/* Spotlight (color-tinted) */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          borderRadius: "20px",
+          background: `radial-gradient(circle 320px at var(--glare-x, 50%) var(--glare-y, 50%), ${color}26 0%, ${color}10 25%, transparent 70%)`,
+          opacity: "var(--spot-opacity, 0)",
+          pointerEvents: "none",
+          zIndex: 1,
+          transition: "opacity 0.25s",
+          mixBlendMode: "screen",
+        }}
+      />
+      {/* Specular glare (white highlight) */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           borderRadius: "20px",
           background:
-            "radial-gradient(circle at var(--glare-x, 50%) var(--glare-y, 50%), rgba(255,255,255,var(--glare-opacity,0)) 0%, transparent 60%)",
+            "radial-gradient(circle 220px at var(--glare-x, 50%) var(--glare-y, 50%), rgba(255,255,255,var(--glare-opacity,0)) 0%, transparent 60%)",
           pointerEvents: "none",
           zIndex: 1,
           transition: "opacity 0.2s",
@@ -147,7 +165,7 @@ export default function ProjectsTier1() {
             marginBottom: "0.75rem",
           }}
         >
-          02 / WORK
+          03 / WORK
         </p>
         <h2
           style={{
@@ -188,6 +206,19 @@ export default function ProjectsTier1() {
                 colorDim={project.colorDim}
                 featured={project.featured}
               >
+                {/* Thumbnail */}
+                <div style={{ marginBottom: project.featured ? "1.75rem" : "1.25rem" }}>
+                  <ProjectThumb
+                    src={project.image}
+                    alt={name}
+                    monogram={project.monogram}
+                    color={project.color}
+                    colorDim={project.colorDim}
+                    aspect={project.featured ? "21 / 9" : "16 / 10"}
+                    variant="browser"
+                  />
+                </div>
+
                 <div
                   style={{
                     display: "flex",
@@ -271,53 +302,14 @@ export default function ProjectsTier1() {
                   ))}
                 </div>
 
-                {/* Links */}
-                {(project.github || project.demo) && (
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: "1rem",
-                      marginTop: "1.5rem",
-                    }}
-                  >
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          fontSize: "0.8rem",
-                          color: project.color,
-                          textDecoration: "none",
-                          fontWeight: 600,
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "0.35rem",
-                        }}
-                      >
-                        GitHub →
-                      </a>
-                    )}
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          fontSize: "0.8rem",
-                          color: project.color,
-                          textDecoration: "none",
-                          fontWeight: 600,
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "0.35rem",
-                        }}
-                      >
-                        Live →
-                      </a>
-                    )}
-                  </div>
-                )}
+                {/* Links / Policy badges */}
+                <ProjectLinks
+                  github={project.github}
+                  githubPolicy={project.githubPolicy}
+                  demo={project.demo}
+                  demoPolicy={project.demoPolicy}
+                  color={project.color}
+                />
               </TiltCard>
             </div>
           );

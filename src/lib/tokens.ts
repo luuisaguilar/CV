@@ -44,57 +44,82 @@ export const tokens = {
   easeOut: "cubic-bezier(0, 0, 0.2, 1)",
 } as const;
 
-// Project data — single source of truth
+// Project link visibility — null hides; "private" / "on_request" / "nda" render as a badge
+export type LinkPolicy = "private" | "on_request" | "nda" | null;
+
+// Project data — single source of truth.
+// To attach a real screenshot, drop a 16:9 image in /public/projects/<id>.webp
+// and set `image: "/projects/<id>.webp"`. Until then a procedural fallback renders.
 export const TIER1_PROJECTS = [
   {
     id: "lastopp",
+    monogram: "LO",
     color: "#FF6B35",
     colorDim: "rgba(255,107,53,0.12)",
     tech: ["Node.js", "Next.js 15", "Supabase", "Docker", "Playwright", "Telegram"],
     status: "active" as const,
     featured: true,
+    image: null as string | null,
     github: null,
+    githubPolicy: "private" as LinkPolicy,
     demo: null,
+    demoPolicy: "on_request" as LinkPolicy,
   },
   {
     id: "fixlab",
+    monogram: "FX",
     color: "#00D4AA",
     colorDim: "rgba(0,212,170,0.12)",
     tech: ["Next.js 14", "Supabase", "PostgreSQL", "Docker"],
     status: "active" as const,
     featured: false,
+    image: null as string | null,
     github: null,
+    githubPolicy: "private" as LinkPolicy,
     demo: null,
+    demoPolicy: "on_request" as LinkPolicy,
   },
   {
     id: "oip",
+    monogram: "OIP",
     color: "#7C3AED",
     colorDim: "rgba(124,58,237,0.15)",
     tech: ["Next.js 15", "Python", "FastAPI", "Supabase", "Docker"],
     status: "active" as const,
     featured: false,
+    image: null as string | null,
     github: null,
+    githubPolicy: "private" as LinkPolicy,
     demo: null,
+    demoPolicy: "on_request" as LinkPolicy,
   },
   {
     id: "designstudio",
+    monogram: "DS",
     color: "#C9651A",
     colorDim: "rgba(201,101,26,0.12)",
     tech: ["React", "Vite", "Claude API", "Cloudflare Pages"],
     status: "deployed" as const,
     featured: false,
+    image: null as string | null,
     github: "https://github.com/luuisaguilar/design-studio",
+    githubPolicy: null as LinkPolicy,
     demo: null,
+    demoPolicy: "on_request" as LinkPolicy,
   },
   {
     id: "lec",
+    monogram: "LEC",
     color: "#003d7c",
     colorDim: "rgba(0,61,124,0.20)",
     tech: ["Next.js", "Supabase", "Playwright", "Docker"],
     status: "active" as const,
     featured: false,
+    image: null as string | null,
     github: null,
+    githubPolicy: "nda" as LinkPolicy,
     demo: "https://lec.mx",
+    demoPolicy: null as LinkPolicy,
   },
 ] as const;
 
@@ -104,37 +129,100 @@ export const TIER2_PROJECTS = [
     color: "#00D4AA",
     tech: ["n8n", "Supabase", "Python", "Claude API"],
     status: "prototype" as const,
+    github: null,
+    githubPolicy: "private" as LinkPolicy,
+    demo: null,
+    demoPolicy: "on_request" as LinkPolicy,
   },
   {
     id: "agents",
     color: "#7C3AED",
     tech: ["Python", "Streamlit", "OpenAI", "Obsidian"],
     status: "active" as const,
+    github: null,
+    githubPolicy: "private" as LinkPolicy,
+    demo: null,
+    demoPolicy: null as LinkPolicy,
   },
   {
     id: "n8n",
     color: "#FF6B35",
     tech: ["n8n", "pgvector", "PostgreSQL", "Docker"],
     status: "active" as const,
+    github: null,
+    githubPolicy: "private" as LinkPolicy,
+    demo: null,
+    demoPolicy: null as LinkPolicy,
   },
   {
     id: "proxmox",
     color: "#E56D1E",
     tech: ["Proxmox VE", "Cloudflare Tunnel", "Docker", "Linux"],
     status: "active" as const,
+    github: null,
+    githubPolicy: "private" as LinkPolicy,
+    demo: null,
+    demoPolicy: null as LinkPolicy,
   },
   {
     id: "csa",
     color: "#C9651A",
     tech: ["WordPress", "WooCommerce", "Next.js"],
     status: "active" as const,
+    github: null,
+    githubPolicy: "private" as LinkPolicy,
+    demo: null,
+    demoPolicy: "on_request" as LinkPolicy,
   },
   {
     id: "scraper",
     color: "#00D4AA",
     tech: ["Python", "Playwright", "Docker", "Proxies"],
     status: "active" as const,
+    github: null,
+    githubPolicy: "on_request" as LinkPolicy,
+    demo: null,
+    demoPolicy: null as LinkPolicy,
   },
+] as const;
+
+// Experience timeline. Translate the role/company/desc via i18n keys
+// experience.<id>_role / _company / _desc.
+export const EXPERIENCES = [
+  {
+    id: "lec",
+    period: "2022 — Now",
+    color: "#003d7c",
+    type: "founder" as const,
+  },
+  {
+    id: "csa",
+    period: "2023 — Now",
+    color: "#C9651A",
+    type: "founder" as const,
+  },
+  {
+    id: "freelance",
+    period: "2021 — Now",
+    color: "#7C3AED",
+    type: "freelance" as const,
+  },
+  {
+    id: "education",
+    period: "2018 — 2023",
+    color: "#00D4AA",
+    type: "education" as const,
+  },
+] as const;
+
+// Services offered. Translated via i18n keys services.<id>_title / _desc.
+export const SERVICES = [
+  { id: "saas", icon: "◢", color: "#7C3AED" },
+  { id: "ai_workflows", icon: "◇", color: "#00D4AA" },
+  { id: "automation", icon: "⚙", color: "#FF6B35" },
+  { id: "data_scraping", icon: "⌬", color: "#C9651A" },
+  { id: "infra", icon: "▣", color: "#3ECF8E" },
+  { id: "consulting", icon: "✦", color: "#a78bfa" },
 ] as const;
 
 export const STACK_ITEMS = [

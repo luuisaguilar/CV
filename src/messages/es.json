@@ -1,7 +1,17 @@
 {
+  "meta": {
+    "title": "Luis Aguilar — Ingeniero & Builder",
+    "description": "Ingeniero en Gestión Empresarial. Construyo productos inteligentes — plataformas SaaS, workflows de IA, motores de trading y herramientas para developers."
+  },
+  "common": {
+    "download_cv": "Descargar CV",
+    "cv_short": "CV"
+  },
   "nav": {
     "about": "Sobre mí",
+    "services": "Servicios",
     "projects": "Proyectos",
+    "experience": "Experiencia",
     "contact": "Contacto",
     "lang": "EN"
   },
@@ -31,7 +41,15 @@
     "status_active": "Activo",
     "status_prototype": "Prototipo",
     "status_deployed": "Desplegado",
-    "status_legacy": "Legacy"
+    "status_legacy": "Legacy",
+    "source_label": "Código",
+    "demo_label": "Demo",
+    "live_label": "En vivo",
+    "policy_private": "Privado",
+    "policy_on_request": "A petición",
+    "policy_nda": "Bajo NDA",
+    "policy_tooltip_code": "El código no es público — escríbeme para un walkthrough.",
+    "policy_tooltip_demo": "Demo disponible a petición — escríbeme para acceso."
   },
   "contact": {
     "title": "Construyamos algo",
@@ -39,6 +57,39 @@
     "email": "Escríbeme",
     "github": "GitHub",
     "linkedin": "LinkedIn"
+  },
+  "services": {
+    "title": "Lo que hago — productos de ingeniería en la frontera entre código, IA y operaciones.",
+    "saas_title": "Plataformas SaaS",
+    "saas_desc": "Productos multi-tenant end-to-end con Next.js + Supabase: auth, RLS, schema, billing y dashboards.",
+    "ai_workflows_title": "Workflows de IA",
+    "ai_workflows_desc": "Agentes y pipelines en producción con Claude/OpenAI: motores de scoring, RAG y salida estructurada.",
+    "automation_title": "Automatización de Negocio",
+    "automation_desc": "n8n + código a medida para eliminar fricción operativa: facturación, reportes y herramientas internas.",
+    "data_scraping_title": "Datos & Scraping",
+    "data_scraping_desc": "Scrapers Playwright resilientes con anti-detección, rotación de proxies y outputs estructurados.",
+    "infra_title": "Infra & DevOps",
+    "infra_desc": "Self-hosted en Proxmox, Docker, Cloudflare Tunnel y pipelines CI/CD listos para homelab.",
+    "consulting_title": "Consultoría Técnica",
+    "consulting_desc": "Auditorías de arquitectura, planeación de sprints y coaching para founders que lanzan su primer SaaS."
+  },
+  "experience": {
+    "title": "Dónde he estado construyendo",
+    "type_founder": "Fundador",
+    "type_freelance": "Freelance",
+    "type_education": "Educación",
+    "lec_role": "Fundador & CTO",
+    "lec_company": "LEC — Consultora Cambridge English",
+    "lec_desc": "Fundé y construí el ecosistema completo: sitio principal, SaaS multi-tenant (lecorb), módulo de finanzas y extracción automatizada con Playwright. Operando en varias escuelas en México.",
+    "csa_role": "Fundador & Operador",
+    "csa_company": "Chiles Secos Andrade",
+    "csa_desc": "Marca de e-commerce y operaciones: roadmaps de sprints, blueprint de frontend y plan completo de remediación digital desde cero.",
+    "freelance_role": "Ingeniero Independiente",
+    "freelance_company": "Freelance · Remoto",
+    "freelance_desc": "30+ productos entregados para clientes y proyectos personales: workflows de IA, scrapers, dashboards, automatización y herramientas de trading research.",
+    "education_role": "Ing. en Gestión Empresarial",
+    "education_company": "Tecnológico de México",
+    "education_desc": "Formación de ingeniería con mentalidad de sistemas. Track de certificación PMI. Autodidacta en stack web moderno, IA y DevOps."
   },
   "tier1": {
     "lastopp_name": "LastOpp",

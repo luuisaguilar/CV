@@ -78,7 +78,7 @@ export default function ContactSection() {
             marginBottom: "1rem",
           }}
         >
-          03 / CONTACT
+          05 / CONTACT
         </p>
         <h2
           style={{

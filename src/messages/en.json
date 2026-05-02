@@ -1,7 +1,17 @@
 {
+  "meta": {
+    "title": "Luis Aguilar — Engineer & Builder",
+    "description": "Business Management Engineer. I build intelligent products — SaaS platforms, AI workflows, trading engines, and developer tools."
+  },
+  "common": {
+    "download_cv": "Download CV",
+    "cv_short": "CV"
+  },
   "nav": {
     "about": "About",
+    "services": "Services",
     "projects": "Projects",
+    "experience": "Experience",
     "contact": "Contact",
     "lang": "ES"
   },
@@ -31,7 +41,15 @@
     "status_active": "Active",
     "status_prototype": "Prototype",
     "status_deployed": "Deployed",
-    "status_legacy": "Legacy"
+    "status_legacy": "Legacy",
+    "source_label": "Source",
+    "demo_label": "Demo",
+    "live_label": "Live",
+    "policy_private": "Private",
+    "policy_on_request": "On Request",
+    "policy_nda": "Under NDA",
+    "policy_tooltip_code": "Source code is not publicly available — reach out for a walkthrough.",
+    "policy_tooltip_demo": "Demo available on request — reach out for access."
   },
   "contact": {
     "title": "Let's build something",
@@ -39,6 +57,39 @@
     "email": "Email me",
     "github": "GitHub",
     "linkedin": "LinkedIn"
+  },
+  "services": {
+    "title": "What I do — engineered products at the seam of code, AI and operations.",
+    "saas_title": "SaaS Platforms",
+    "saas_desc": "End-to-end multi-tenant products on Next.js + Supabase: auth, RLS, schema, billing, dashboards.",
+    "ai_workflows_title": "AI Workflows",
+    "ai_workflows_desc": "Production agents and pipelines with Claude/OpenAI: scoring engines, RAG, structured output.",
+    "automation_title": "Business Automation",
+    "automation_desc": "n8n + custom code to remove operational toil: invoice flows, reporting, internal tooling.",
+    "data_scraping_title": "Data & Scraping",
+    "data_scraping_desc": "Resilient Playwright scrapers with anti-detection, proxy rotation and structured outputs.",
+    "infra_title": "Infra & DevOps",
+    "infra_desc": "Self-hosted Proxmox, Docker, Cloudflare Tunnel and CI/CD pipelines for homelab-grade ops.",
+    "consulting_title": "Technical Consulting",
+    "consulting_desc": "Architecture audits, sprint planning and hands-on coaching for founders shipping their first SaaS."
+  },
+  "experience": {
+    "title": "Where I've been building",
+    "type_founder": "Founder",
+    "type_freelance": "Freelance",
+    "type_education": "Education",
+    "lec_role": "Founder & CTO",
+    "lec_company": "LEC — Cambridge English Consultancy",
+    "lec_desc": "Founded and built the full ecosystem: marketing site, multi-tenant SaaS (lecorb), finance module and Playwright-automated data extraction. Operating across multiple schools in Mexico.",
+    "csa_role": "Founder & Operator",
+    "csa_company": "Chiles Secos Andrade",
+    "csa_desc": "E-commerce brand and operations: sprint roadmaps, frontend blueprint, and the full digital remediation plan from scratch.",
+    "freelance_role": "Independent Engineer",
+    "freelance_company": "Freelance · Remote",
+    "freelance_desc": "30+ products shipped for clients and personal ventures: AI workflows, scrapers, dashboards, automation, and trading research tools.",
+    "education_role": "B.Eng. Business Management Engineering",
+    "education_company": "Tecnológico de México",
+    "education_desc": "Systems-first engineering background. PMI Project Management certification track. Self-taught across the modern web, AI and DevOps stacks."
   },
   "tier1": {
     "lastopp_name": "LastOpp",

@@ -10,6 +10,7 @@ interface NavbarProps {
 
 export default function Navbar({ locale }: NavbarProps) {
   const t = useTranslations("nav");
+  const tCommon = useTranslations("common");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -20,7 +21,9 @@ export default function Navbar({ locale }: NavbarProps) {
 
   const navLinks = [
     { label: t("about"), href: "#about" },
+    { label: t("services"), href: "#services" },
     { label: t("projects"), href: "#projects" },
+    { label: t("experience"), href: "#experience" },
     { label: t("contact"), href: "#contact" },
   ];
 
@@ -64,10 +67,11 @@ export default function Navbar({ locale }: NavbarProps) {
 
       {/* Links */}
       <div
+        className="navbar-links"
         style={{
           display: "flex",
           alignItems: "center",
-          gap: "2rem",
+          gap: "1.5rem",
         }}
       >
         {navLinks.map((link) => (
@@ -91,8 +95,52 @@ export default function Navbar({ locale }: NavbarProps) {
             {link.label}
           </a>
         ))}
+
+        {/* Download CV */}
+        <a
+          href="/cv.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={tCommon("download_cv")}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.4rem",
+            padding: "0.4rem 0.9rem",
+            borderRadius: "999px",
+            background: "rgba(124,58,237,0.12)",
+            border: "1px solid rgba(124,58,237,0.35)",
+            color: "#f0f0ff",
+            fontSize: "0.78rem",
+            fontWeight: 600,
+            fontFamily: "'JetBrains Mono', monospace",
+            letterSpacing: "0.04em",
+            textDecoration: "none",
+            transition: "background 0.2s, border-color 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            const el = e.currentTarget as HTMLAnchorElement;
+            el.style.background = "rgba(124,58,237,0.25)";
+            el.style.borderColor = "rgba(124,58,237,0.6)";
+          }}
+          onMouseLeave={(e) => {
+            const el = e.currentTarget as HTMLAnchorElement;
+            el.style.background = "rgba(124,58,237,0.12)";
+            el.style.borderColor = "rgba(124,58,237,0.35)";
+          }}
+        >
+          <span aria-hidden="true">↓</span>
+          {tCommon("cv_short")}
+        </a>
+
         <LanguageToggle locale={locale} />
       </div>
+
+      <style>{`
+        @media (max-width: 720px) {
+          .navbar-links a:not([aria-label]) { display: none; }
+        }
+      `}</style>
     </nav>
   );
 }
