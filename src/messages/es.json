@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Luis Aguilar — Ingeniero & Builder",
-    "description": "Ingeniero en Gestión Empresarial. Construyo productos inteligentes — plataformas SaaS, workflows de IA, motores de trading y herramientas para developers."
+    "title": "Luis Aguilar — Project Manager · Sistemas de Negocio · AI Automation Builder",
+    "description": "Project Manager e Ingeniero en Gestión Empresarial. Construyo productos digitales prácticos en la intersección de automatización, IA y operaciones reales — en educación, comercio y SaaS."
   },
   "common": {
     "download_cv": "Descargar CV",
@@ -18,20 +18,46 @@
   "hero": {
     "greeting": "Hola, soy",
     "name": "Luis Aguilar",
-    "roles": ["Ingeniero de Negocio", "Builder de IA", "Product Maker", "Arquitecto de Sistemas"],
-    "tagline": "Construyo productos inteligentes — desde plataformas SaaS y motores de trading hasta workflows de IA y herramientas para developers.",
+    "roles": ["Project Manager", "Sistemas de Negocio", "AI Automation Builder", "Arquitecto de Sistemas"],
+    "tagline": "Construyo productos digitales prácticos en la intersección de automatización, IA y operaciones reales — en educación, comercio y SaaS.",
     "cta_primary": "Ver mi trabajo",
     "cta_secondary": "Hablemos",
     "scroll": "Desliza para explorar"
   },
   "about": {
+    "label": "Introducción",
     "title": "Sobre mí",
-    "bio": "Ingeniero en Gestión Empresarial con mentalidad de sistemas. Diseño y lanzo productos en la intersección de automatización, IA y operaciones de negocio reales. Fundador de LEC y CSA. Aspirante a PM certificado por PMI.",
+    "bio": "Soy Ingeniero en Gestión Empresarial enfocado en project management, sistemas de negocio y automatización con IA. Construyo soluciones digitales prácticas que mejoran operaciones, toma de decisiones y experiencia del cliente en entornos de educación, retail y SaaS. Mi trabajo combina estrategia de negocio, diseño de procesos e implementación tecnológica para crear sistemas escalables que resuelven problemas reales. Basado en Sonora, México — construyendo en la intersección entre gestión empresarial y tecnología moderna.",
     "stat_projects": "Productos Construidos",
     "stat_years": "Años Construyendo",
     "stat_businesses": "Negocios Activos",
     "stat_automations": "Automatizaciones Desplegadas",
-    "stack_title": "Stack e Infraestructura"
+    "stack_title": "Stack e Infraestructura",
+    "highlights_title": "Cómo pienso",
+    "highlights": {
+      "strategic_title": "Pensamiento Estratégico",
+      "strategic_desc": "Mentalidad de procesos orientada a ISO combinada con estrategia de negocio para diseñar sistemas escalables y eficientes.",
+      "ai_title": "AI Builder",
+      "ai_desc": "Aprovecha automatización con IA, workflows de n8n y bots inteligentes para optimizar operaciones de negocio.",
+      "systems_title": "Arquitecto de Sistemas",
+      "systems_desc": "Diseña implementaciones de CRM/ERP y arquitecturas SaaS multi-tenant.",
+      "ops_title": "Experto en Operaciones",
+      "ops_desc": "Optimización data-driven de procesos de negocio en educación, retail y SaaS."
+    },
+    "other_skills_title": "También con experiencia en",
+    "other_skills": [
+      "Implementación de CRM / ERP",
+      "Planeación de Productos SaaS",
+      "Optimización de Operaciones",
+      "Pensamiento ISO de Procesos",
+      "Análisis de Datos",
+      "Branding & Negocio Digital",
+      "Bots de WhatsApp",
+      "Bots de Telegram",
+      "Self-Hosting con Proxmox",
+      "Automatización de Workflows",
+      "Decisiones data-driven"
+    ]
   },
   "projects": {
     "featured_title": "Trabajo Destacado",
@@ -94,32 +120,32 @@
   "tier1": {
     "lastopp_name": "LastOpp",
     "lastopp_tag": "Inteligencia Forense de Subastas",
-    "lastopp_desc": "Centro de comando de alta fidelidad para análisis de subastas de vehículos. Motor de scoring forense determinístico, telemetría en tiempo real, control remoto por Telegram y dashboard táctico glassmórfico.",
+    "lastopp_desc": "Centro de comando forense de alta fidelidad para análisis de subastas de vehículos. Motor de scoring determinístico que rankea lotes por daño, año, pujas de mercado y patrones históricos. Dashboard de telemetría en tiempo real, control remoto por Telegram y nodos scraper con Playwright.",
     "fixlab_name": "FixLab ERP/CRM",
     "fixlab_tag": "SaaS para Talleres de Reparación",
-    "fixlab_desc": "Plataforma SaaS multi-tenant para talleres de gadgets. Gestión Kanban de órdenes, inventario de precisión, portal público de rastreo para clientes y actualizaciones en tiempo real con Supabase.",
+    "fixlab_desc": "Plataforma SaaS multi-tenant para talleres de gadgets. Flujo Kanban de órdenes desde recepción hasta entrega, inventario de precisión con tracking SKU, portal público de rastreo para clientes y actualizaciones en tiempo real con Supabase.",
     "oip_name": "Operating Intelligence Platform",
     "oip_tag": "Suite de Inteligencia de Mercados",
-    "oip_desc": "Sistema de soporte de decisiones que escanea mercados de predicción y crypto en busca de anomalías. Motores Python alimentan un dashboard unificado en Next.js 15 con el design system Aether Intelligence.",
+    "oip_desc": "Sistema de soporte de decisiones que escanea mercados de predicción y crypto en busca de anomalías de spread/liquidez. Motores Python alimentan un dashboard unificado en Next.js 15 con el design system Aether Intelligence — glassmorphism sobre paletas obsidiana.",
     "designstudio_name": "Design Studio",
     "designstudio_tag": "Plataforma de Herramientas Creativas",
-    "designstudio_desc": "Plataforma web para diseñadores independientes: verificador de contraste WCAG, extractor de paleta desde imágenes y workshop estratégico con IA usando Claude. Desplegado en Cloudflare Pages.",
+    "designstudio_desc": "Plataforma web para diseñadores independientes y front-end developers: verificador de contraste WCAG, extractor de paleta desde imágenes y workshop estratégico con IA usando Claude. Desplegado en vivo en Cloudflare Pages.",
     "lec_name": "Ecosistema LEC",
     "lec_tag": "Plataforma Ed-Tech Multi-tenant",
-    "lec_desc": "Plataforma completa para LEC — consultora de certificaciones Cambridge en México. Incluye sitio principal, SaaS multi-tenant (lecorb), módulo de finanzas y extracción automatizada de datos con Playwright."
+    "lec_desc": "Plataforma completa para LEC — consultora de certificaciones Cambridge en México. Sitio principal (lec.mx), SaaS multi-tenant (lecorb), módulo de finanzas y extracción automatizada de datos de estudiantes desde centros Cambridge con Playwright."
   },
   "tier2": {
     "cvos_name": "CV OS",
-    "cvos_desc": "Pipeline de parsing de CVs y matching de empleos impulsado por IA, construido con n8n + Supabase. Extrae datos estructurados de currículums y detecta oportunidades relevantes.",
+    "cvos_desc": "Pipeline de parsing de CVs y matching de empleos impulsado por IA, construido con n8n + Supabase. Extrae datos estructurados de currículums y detecta oportunidades relevantes automáticamente.",
     "agents_name": "Motor de Conocimiento",
-    "agents_desc": "Sistema multi-agente que ingesta canales de YouTube, repositorios de GitHub y páginas web hacia una base de conocimiento en Obsidian. Construido con Streamlit + Python.",
+    "agents_desc": "Sistema multi-agente que ingesta canales de YouTube, repos de GitHub y páginas web hacia una base de conocimiento en Obsidian. Construido con Streamlit + Python con un chef digital y módulo de auditoría profunda de GitHub.",
     "n8n_name": "Stack de Automatización n8n",
-    "n8n_desc": "Backbone de automatización interna: conversión de documentos, ingesta KB con pgvector y workflows de normalización de empleos.",
+    "n8n_desc": "Backbone de automatización interna: workflows de conversión de documentos, ingesta KB con pgvector y pipelines de normalización de empleos. Corre self-hosted en Proxmox.",
     "proxmox_name": "Homelab Proxmox",
-    "proxmox_desc": "Infra self-hosted en HP Z440 corriendo Proxmox VE. Aloja n8n, Chatwoot y todos los servicios vía Cloudflare Tunnel. Docs de auditoría completos y scripts de operaciones.",
+    "proxmox_desc": "HP Z440 self-hosted corriendo Proxmox VE. Aloja n8n, Chatwoot y todos los servicios internos vía Cloudflare Tunnel. Docs de auditoría completos, scripts de hardening y runbooks de operaciones.",
     "csa_name": "Chiles Secos Andrade",
-    "csa_desc": "Marca de e-commerce y operaciones de negocio para CSA. Incluye roadmaps de sprints, blueprint de frontend y plan de remediación documentado para la presencia web.",
+    "csa_desc": "Digitalización de negocio para una operación de comercio tradicional. Roadmaps de sprints, blueprint de frontend, branding, sistema de etiquetado de productos y estrategia documentada de crecimiento e-commerce.",
     "scraper_name": "Scraper Shopify",
-    "scraper_desc": "Scraper Python con Playwright listo para producción: anti-detección, rotación de proxies opcional y salida de datos estructurados para tiendas Shopify."
+    "scraper_desc": "Scraper Playwright listo para producción con anti-detección, rotación opcional de proxies y output estructurado para tiendas Shopify. Arquitectura modular lista para escalar."
   }
 }

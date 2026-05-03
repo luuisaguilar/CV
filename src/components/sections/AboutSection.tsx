@@ -11,6 +11,13 @@ const STATS = [
   { key: "stat_automations", value: 40, suffix: "+" },
 ] as const;
 
+const HIGHLIGHTS = [
+  { id: "strategic", color: "#7C3AED", icon: "◆" },
+  { id: "ai", color: "#00D4AA", icon: "◇" },
+  { id: "systems", color: "#FF6B35", icon: "▣" },
+  { id: "ops", color: "#a78bfa", icon: "✦" },
+] as const;
+
 function useCountUp(target: number, duration = 1400) {
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
@@ -257,6 +264,148 @@ export default function AboutSection() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Highlight cards — how I think */}
+      <div className="reveal" style={{ marginTop: "5rem" }}>
+        <p
+          style={{
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: "0.75rem",
+            color: "#606080",
+            letterSpacing: "0.1em",
+            marginBottom: "1.5rem",
+          }}
+        >
+          {t("highlights_title")}
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: "1rem",
+          }}
+        >
+          {HIGHLIGHTS.map((h) => {
+            const title = t(`highlights.${h.id}_title` as Parameters<typeof t>[0]);
+            const desc = t(`highlights.${h.id}_desc` as Parameters<typeof t>[0]);
+            return (
+              <div
+                key={h.id}
+                data-cursor
+                style={{
+                  padding: "1.5rem 1.5rem 1.75rem",
+                  background: "rgba(255,255,255,0.03)",
+                  border: "1px solid rgba(255,255,255,0.06)",
+                  borderRadius: "16px",
+                  transition: "background 0.25s, border-color 0.25s, transform 0.25s",
+                  cursor: "default",
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLDivElement;
+                  el.style.background = `linear-gradient(135deg, ${h.color}10 0%, rgba(255,255,255,0.02) 80%)`;
+                  el.style.borderColor = `${h.color}40`;
+                  el.style.transform = "translateY(-3px)";
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLDivElement;
+                  el.style.background = "rgba(255,255,255,0.03)";
+                  el.style.borderColor = "rgba(255,255,255,0.06)";
+                  el.style.transform = "translateY(0)";
+                }}
+              >
+                <div
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "10px",
+                    background: `${h.color}18`,
+                    border: `1px solid ${h.color}38`,
+                    color: h.color,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "1.2rem",
+                    marginBottom: "1rem",
+                  }}
+                  aria-hidden="true"
+                >
+                  {h.icon}
+                </div>
+                <h3
+                  style={{
+                    fontFamily: "'Syne', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "1rem",
+                    letterSpacing: "-0.01em",
+                    color: "#f0f0ff",
+                    marginBottom: "0.4rem",
+                  }}
+                >
+                  {title}
+                </h3>
+                <p
+                  style={{
+                    fontSize: "0.85rem",
+                    color: "#a0a0c0",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {desc}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Also experienced with */}
+      <div className="reveal" style={{ marginTop: "3.5rem" }}>
+        <p
+          style={{
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: "0.7rem",
+            color: "#606080",
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            marginBottom: "1rem",
+          }}
+        >
+          {t("other_skills_title")}
+        </p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+          {(t.raw("other_skills") as string[]).map((skill) => (
+            <span
+              key={skill}
+              style={{
+                padding: "0.4rem 0.85rem",
+                borderRadius: "999px",
+                fontSize: "0.78rem",
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(124,58,237,0.18)",
+                color: "#a0a0c0",
+                fontWeight: 500,
+                transition: "all 0.2s",
+                cursor: "default",
+              }}
+              data-cursor
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLSpanElement;
+                el.style.background = "rgba(124,58,237,0.12)";
+                el.style.borderColor = "rgba(124,58,237,0.45)";
+                el.style.color = "#d8c8ff";
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLSpanElement;
+                el.style.background = "rgba(255,255,255,0.04)";
+                el.style.borderColor = "rgba(124,58,237,0.18)";
+                el.style.color = "#a0a0c0";
+              }}
+            >
+              {skill}
+            </span>
+          ))}
         </div>
       </div>
     </section>

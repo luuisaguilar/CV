@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Luis Aguilar — Engineer & Builder",
-    "description": "Business Management Engineer. I build intelligent products — SaaS platforms, AI workflows, trading engines, and developer tools."
+    "title": "Luis Aguilar — Project Manager · Business Systems · AI Automation Builder",
+    "description": "Project Manager and Business Management Engineer building practical digital products at the intersection of automation, AI, and real business operations — across education, commerce, and SaaS."
   },
   "common": {
     "download_cv": "Download CV",
@@ -16,22 +16,48 @@
     "lang": "ES"
   },
   "hero": {
-    "greeting": "Hey, I'm",
+    "greeting": "Hi there, I'm",
     "name": "Luis Aguilar",
-    "roles": ["Business Engineer", "AI Builder", "Product Maker", "Systems Architect"],
-    "tagline": "I build intelligent products — from SaaS platforms and trading engines to AI workflows and developer tools.",
+    "roles": ["Project Manager", "Business Systems", "AI Automation Builder", "Systems Architect"],
+    "tagline": "Building practical digital products at the intersection of automation, AI, and real business operations — across education, commerce, and SaaS.",
     "cta_primary": "See my work",
     "cta_secondary": "Get in touch",
     "scroll": "Scroll to explore"
   },
   "about": {
+    "label": "Introduction",
     "title": "About me",
-    "bio": "Business Management Engineer with a systems-first mindset. I design and ship products that sit at the intersection of automation, AI, and real business operations. Founder of LEC and CSA. Certified PMI PM aspirant.",
+    "bio": "I'm a Business Management Engineer focused on project management, business systems, and AI-driven automation. I work on building practical digital solutions that improve operations, decision-making, and customer experience across education, retail, and SaaS environments. My current work combines business strategy, process design, and technology implementation to create scalable systems that solve real-world problems. Based in Sonora, Mexico — building at the intersection of business management and modern technology.",
     "stat_projects": "Products Built",
     "stat_years": "Years Building",
     "stat_businesses": "Active Businesses",
     "stat_automations": "Automations Deployed",
-    "stack_title": "Stack & Infra"
+    "stack_title": "Stack & Infra",
+    "highlights_title": "How I think",
+    "highlights": {
+      "strategic_title": "Strategic Thinker",
+      "strategic_desc": "ISO-oriented process thinking combined with business strategy to design scalable, efficient systems.",
+      "ai_title": "AI Builder",
+      "ai_desc": "Leverages AI automation, n8n workflows, and intelligent bots to streamline business operations.",
+      "systems_title": "Systems Architect",
+      "systems_desc": "Designs CRM/ERP implementations and SaaS product architectures with multi-tenant capabilities.",
+      "ops_title": "Operations Expert",
+      "ops_desc": "Data-driven optimization of business processes across education, retail, and SaaS environments."
+    },
+    "other_skills_title": "Also experienced with",
+    "other_skills": [
+      "CRM / ERP Implementation",
+      "SaaS Product Planning",
+      "Operations Optimization",
+      "ISO Process Thinking",
+      "Data Analysis",
+      "Branding & Digital Business",
+      "WhatsApp Bot Development",
+      "Telegram Bot Development",
+      "Proxmox Self-Hosting",
+      "Workflow Automation",
+      "Data-driven Decision Making"
+    ]
   },
   "projects": {
     "featured_title": "Featured Work",
@@ -94,32 +120,32 @@
   "tier1": {
     "lastopp_name": "LastOpp",
     "lastopp_tag": "Forensic Auction Intelligence",
-    "lastopp_desc": "High-fidelity command center for vehicle auction analysis. Deterministic forensic scoring engine, real-time telemetry, Telegram remote control, and a glassmorphic tactical dashboard.",
+    "lastopp_desc": "High-fidelity forensic command center for vehicle auction analysis. Deterministic scoring engine ranks lots by damage, production year, market bids, and historical patterns. Real-time telemetry dashboard, Telegram remote control, and Playwright-powered scraper nodes.",
     "fixlab_name": "FixLab ERP/CRM",
     "fixlab_tag": "SaaS for Repair Shops",
-    "fixlab_desc": "Multi-tenant SaaS platform for gadget repair shops. Kanban order management, precision inventory, public customer tracking portal, and Supabase-powered real-time updates.",
+    "fixlab_desc": "Multi-tenant SaaS platform for gadget repair shops. Kanban order flow from intake to delivery, precision inventory with SKU tracking, public customer-facing tracking portal, and Supabase-powered real-time updates.",
     "oip_name": "Operating Intelligence Platform",
     "oip_tag": "Market Intelligence Suite",
-    "oip_desc": "Decision support system scanning prediction markets and crypto for spread anomalies. Python analytical engines feed a Next.js 15 unified dashboard with the Aether Intelligence design system.",
+    "oip_desc": "Decision support system scanning prediction markets and crypto for spread/liquidity anomalies. Python analytical engines feed a Next.js 15 unified dashboard with the Aether Intelligence design system — glassmorphism over obsidian palettes.",
     "designstudio_name": "Design Studio",
     "designstudio_tag": "Creative Tools Platform",
-    "designstudio_desc": "Web platform for independent designers: WCAG contrast checker, palette extractor from images, and an AI strategic workshop powered by Claude. Deployed on Cloudflare Pages.",
+    "designstudio_desc": "Web platform for independent designers and front-end developers: WCAG contrast checker, palette extractor from images, and AI-powered strategic workshop using Claude. Deployed and live on Cloudflare Pages.",
     "lec_name": "LEC Ecosystem",
     "lec_tag": "Multi-tenant Ed-Tech Platform",
-    "lec_desc": "Full platform for LEC — a Cambridge English certification consultancy in Mexico. Includes the main marketing site, a multi-tenant SaaS (lecorb), finance module, and Playwright-automated data extraction."
+    "lec_desc": "Full platform for LEC — a Cambridge English certification consultancy in Mexico. Marketing site (lec.mx), multi-tenant SaaS (lecorb), finance module, and Playwright-automated student data extraction from Cambridge centres."
   },
   "tier2": {
     "cvos_name": "CV OS",
-    "cvos_desc": "AI-powered CV parsing and job-matching pipeline built on n8n + Supabase. Extracts structured data from resumes and surfaces relevant opportunities.",
+    "cvos_desc": "AI-powered CV parsing and job-matching pipeline built on n8n + Supabase. Extracts structured data from resumes and surfaces relevant opportunities automatically.",
     "agents_name": "Knowledge Engine",
-    "agents_desc": "Multi-agent system that ingests YouTube channels, GitHub repos, and web pages into an Obsidian knowledge base. Built with Streamlit + Python.",
+    "agents_desc": "Multi-agent system ingesting YouTube channels, GitHub repos, and web pages into an Obsidian knowledge base. Built with Streamlit + Python with a digital chef and GitHub deep audit module.",
     "n8n_name": "n8n Automation Stack",
-    "n8n_desc": "Internal automation backbone: document conversion, Obsidian KB ingestion with pgvector, and job normalization workflows.",
+    "n8n_desc": "Internal automation backbone: document conversion workflows, Obsidian KB ingestion with pgvector, and job normalization pipelines. Runs self-hosted on Proxmox.",
     "proxmox_name": "Proxmox Homelab",
-    "proxmox_desc": "Self-hosted HP Z440 infra running Proxmox VE. Hosts n8n, Chatwoot, and all services via Cloudflare Tunnel. Full audit docs and ops scripts.",
+    "proxmox_desc": "Self-hosted HP Z440 running Proxmox VE. Hosts n8n, Chatwoot, and all internal services via Cloudflare Tunnel. Full audit docs, hardening scripts, and ops runbooks.",
     "csa_name": "Chiles Secos Andrade",
-    "csa_desc": "E-commerce brand and business operations for CSA. Includes sprint roadmaps, frontend blueprint, and a documented remediation plan for the web presence.",
+    "csa_desc": "Business digitization for a traditional commerce operation. Sprint roadmaps, frontend blueprint, branding, product labeling system, and a documented growth strategy for e-commerce expansion.",
     "scraper_name": "Shopify Scraper",
-    "scraper_desc": "Production-ready Python Playwright scraper with anti-detection, optional proxy rotation, and structured data output for Shopify stores."
+    "scraper_desc": "Production-ready Playwright scraper with anti-detection, optional proxy rotation, and structured data output for Shopify stores. Modular architecture ready for scale."
   }
 }

@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Luis Aguilar — Portfolio
 
-## Getting Started
+A modern, recruiter-optimized portfolio for **Luis Angel Aguilar** — Project Manager · Business Systems · AI Automation Builder. Built with **Next.js 16**, **React 19**, **TypeScript**, and a custom dark-mode design system.
 
-First, run the development server:
+![License](https://img.shields.io/github/license/luuisaguilar/CV?color=violet)
+![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=flat&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-19-20232A?style=flat&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat&logo=tailwind-css&logoColor=white)
+
+## ✨ Features
+
+- **Bilingual (EN / ES)** with `next-intl` — locale-aware routing, hreflang alternates, and per-locale OG images.
+- **Recruiter-optimized**:
+  - Direct **Download CV** in navbar pill + hero CTA.
+  - Project cards declare `Source · Private / On Request / Under NDA` when no public link exists.
+  - JSON-LD `Person` schema, OpenGraph + Twitter cards, dynamic OG image per locale.
+- **Interactive backgrounds**:
+  - Canvas2D dot field in the hero that reacts to the cursor (no Three.js dependency).
+  - Global blueprint dot grid, gradient section dividers, color-tinted spotlight on featured cards.
+- **Sections**:
+  - Hero · About (4 highlight cards + stats) · Stack marquee · Services (6) · Featured Work · More Projects · Experience timeline · Contact.
+- **Accessibility**: honors `prefers-reduced-motion`, disables custom cursor on touch / coarse pointers.
+- **Performance**: dynamic imports, DPR clamp on canvas, edge-runtime OG generation.
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16 (App Router, Turbopack), React 19
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS v4 + CSS custom properties
+- **i18n**: `next-intl` (EN, ES)
+- **Animations**: Framer Motion 12, GSAP 3, custom Canvas2D (`DotField`)
+- **Type fonts**: Syne (display), Inter (body), JetBrains Mono (eyebrows)
+
+## 📥 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) ≥ 20 LTS
+- [npm](https://www.npmjs.com/) (or pnpm / yarn / bun)
+
+### Installation
+
+```bash
+git clone https://github.com/luuisaguilar/CV.git
+cd CV
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) — or visit `/en` and `/es` directly to test localization.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+### Deploy
 
-To learn more about Next.js, take a look at the following resources:
+Configured for Vercel out of the box:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run deploy
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
+```
+src/
+  app/
+    [locale]/
+      layout.tsx          # i18n provider + JSON-LD + metadata
+      page.tsx            # composes all sections
+      opengraph-image.tsx # dynamic OG per locale
+  components/
+    canvas/   DotField.tsx
+    sections/ Hero, About, MarqueeStrip, Services, ProjectsTier1, ProjectsTier2, Experience, Contact
+    ui/       AvatarFrame, Navbar, MagneticButton, ProjectThumb, ProjectLinks, SectionDivider, CustomCursor, LanguageToggle
+  i18n/       request.ts, routing.ts
+  lib/        tokens.ts   # design tokens + project / experience / service data
+  messages/   en.json, es.json
+public/
+  avatar.jpg              # drop your photo here (fallback: monogram "LA")
+  cv.pdf                  # CV download target
+  projects/<id>.webp      # optional project screenshots (fallback: procedural)
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌐 Adding a project, experience or service
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All structured content lives in `src/lib/tokens.ts` (visual props) plus `src/messages/{en,es}.json` (copy). Add a new entry to the relevant array, drop matching translation keys, and the new card renders automatically.
+
+## 📜 License
+
+MIT — see [LICENSE](./LICENSE).
+
+---
+
+**Designed & built by Luis Aguilar** · Sonora, Mexico
