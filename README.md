@@ -62,13 +62,49 @@ npm run build
 npm run start
 ```
 
-### Deploy
+### Deploy (Vercel — recommended)
 
-Configured for Vercel out of the box:
+Production is hosted on **Vercel** (not Cloudflare Pages). The repo is linked to GitHub; each push to `main` can deploy automatically.
+
+| URL | Purpose |
+|-----|---------|
+| https://luisaguilaraguila-portfolio.vercel.app | Production alias (live) |
+| https://luisaguilaraguila.com | Custom domain (after DNS below) |
 
 ```bash
-npm run deploy
+npm run deploy   # manual production deploy
 ```
+
+#### 1. Disconnect Cloudflare Pages (keep Cloudflare DNS)
+
+Cloudflare **DNS** and Cloudflare **Pages** are separate. You can keep HostGator + Cloudflare DNS and still use Vercel for hosting.
+
+1. [Cloudflare Dashboard](https://dash.cloudflare.com) → **Workers & Pages**
+2. Open the project connected to `luuisaguilar/CV`
+3. **Settings** → **Builds** → **Disconnect** / delete the project (or pause deployments)
+
+This removes the failing GitHub check; it does **not** remove your DNS zone.
+
+#### 2. DNS in Cloudflare → point to Vercel
+
+In **DNS** → **Records** for `luisaguilaraguila.com`:
+
+| Type | Name | Content | Proxy |
+|------|------|---------|-------|
+| `CNAME` | `www` | `cname.vercel-dns.com` | DNS only (grey cloud) recommended at first |
+| `A` | `@` | `76.76.21.21` | DNS only |
+
+Or use the exact records Vercel shows after adding the domain:
+
+1. [Vercel Dashboard](https://vercel.com) → project **luisaguilaraguila-portfolio** → **Settings** → **Domains**
+2. Add `luisaguilaraguila.com` and `www.luisaguilaraguila.com`
+3. Copy the verification / target records into Cloudflare
+
+**SSL/TLS** in Cloudflare: **Full** (or Full strict once the cert on Vercel is active).
+
+#### 3. GitHub CI
+
+`.github/workflows/ci.yml` runs lint + build on push. That is the source of truth for code health. Cloudflare Pages is not required.
 
 ## 📁 Project Structure
 

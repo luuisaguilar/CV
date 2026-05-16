@@ -8,7 +8,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 ```
 
-> Last sync: 2026-05-15 21:21 · `e19be29` · Launch: 65%
+> Last sync: 2026-05-15 22:55 · `6735b5a` · Launch: 70%
 >
 > `/track` = full scan (build, audit, velocity, all metrics)
 > Auto-updates after each significant change (timestamp, %, activity)
@@ -18,15 +18,15 @@
 ## Launch Readiness
 
 ```
-OVERALL        [█████████████░░░░░░░]  65%  →  Production
+OVERALL        [██████████████░░░░░░]  70%  →  Production
 ```
 
 ```
-Core / Sections  [██████████████████░░]  90%  🟡 middleware naming bug
+Core / Sections  [███████████████████░]  95%  ✅ proxy.ts (Next.js 16 i18n)
 Content / i18n   [███████████████████░]  95%  ✅ EN+ES complete
 Legal            [████████████████████] 100%  ✅ MIT license
 Docs             [████████████████████] 100%  ✅ README + CLAUDE
-Deploy / CI      [████████████████░░░░]  80%  🟡 Vercel + GHA configured
+Deploy / CI      [██████████████████░░]  90%  ✅ Vercel live + GHA green; CF Pages off
 SEO              [████████████░░░░░░░░]  60%  🟡 meta+JSON-LD ok, no sitemap/robots
 Security         [████████████░░░░░░░░]  60%  ⚠️ 36 vulns in dev deps (24 high)
 Assets           [███░░░░░░░░░░░░░░░░░]  15%  🔴 no avatar.jpg / cv.pdf          ← BLOCKER
@@ -38,11 +38,9 @@ Testing          [█░░░░░░░░░░░░░░░░░░░] 
 **Blockers**
 ▸ `public/avatar.jpg` missing — avatar rendered as monogram fallback, not a real photo
 ▸ `public/cv.pdf` missing — "Download CV" button 404s for recruiters
-▸ `src/proxy.ts` named wrong — should be `src/middleware.ts`; i18n locale detection is NOT running
-
 **Next Actions**
 1. Drop `avatar.jpg` into `/public/` and `cv.pdf` — unblocks Assets → +15%
-2. Rename `src/proxy.ts` → `src/middleware.ts` — fixes i18n middleware, locale detection works → +8%
+2. Disconnect Cloudflare Pages; point Cloudflare DNS to Vercel — see README Deploy
 3. Add `src/app/sitemap.ts` + `src/app/robots.ts` — unblocks SEO → +8%
 
 ---
@@ -62,7 +60,7 @@ CURRENT PHASE ▶ Content & Launch Assets
 
   Phase 2 · Content & Launch Assets           ◀ YOU ARE HERE
   ──────────────────────────────────────────────────────────────
-  Includes:  avatar.jpg + cv.pdf drop-in, middleware rename fix,
+  Includes:  avatar.jpg + cv.pdf drop-in, Cloudflare DNS → Vercel,
              sitemap.ts + robots.ts, project screenshots (optional),
              domain verification on luisaguilaraguila.com
   Metric:    Site loads at prod URL, CV downloads, locale switches
@@ -104,10 +102,11 @@ CURRENT PHASE ▶ Content & Launch Assets
   Local:       npm run dev
                → http://localhost:3000  (redirects to /en)
 
-  Production:  https://luisaguilaraguila.com  (hardcoded in layout.tsx)
-               Also: vercel ls to check Vercel project URL
+  Production:  https://luisaguilaraguila-portfolio.vercel.app
+               Custom: https://luisaguilaraguila.com (DNS in Cloudflare → Vercel)
 
   Deploy:      npm run deploy  (= vercel --prod)
+               GitHub → Vercel auto-deploy on push to main
 ```
 
 ---
@@ -134,8 +133,8 @@ No `process.env` variables referenced anywhere in source code. This portfolio is
   ┌──────────────────────────────────────────────────────────────┐
   │  Next.js 16 App Router  (src/app/)                          │
   │                                                              │
-  │  src/proxy.ts  ← WRONG NAME (should be middleware.ts)        │
-  │  └── next-intl middleware  →  locale detection / routing     │
+  │  src/proxy.ts  (Next.js 16 proxy / next-intl)                │
+  │  └── locale detection / routing                              │
   │                                                              │
   │  /                src/app/page.tsx         redirect → /en    │
   │  /[locale]/       src/app/[locale]/page.tsx  composes sections│
@@ -168,7 +167,7 @@ No `process.env` variables referenced anywhere in source code. This portfolio is
 | `src/app/[locale]/layout.tsx` | i18n provider, metadata, JSON-LD schema |
 | `src/app/[locale]/opengraph-image.tsx` | Dynamic OG image per locale |
 | `src/app/page.tsx` | Root redirect `/` → `/en` |
-| `src/proxy.ts` | next-intl middleware (WRONG FILENAME — should be `middleware.ts`) |
+| `src/proxy.ts` | next-intl proxy (Next.js 16 convention) |
 | `src/lib/tokens.ts` | Design tokens + all project/experience/service data |
 | `src/messages/en.json` | English copy (all sections) |
 | `src/messages/es.json` | Spanish copy (all sections) |
@@ -477,7 +476,7 @@ Top files by size:
   ──────────────────────────────────────────────────────────────
   No avatar photo visible           🔴 High    Drop avatar.jpg into /public/
   CV download 404                   🔴 High    Drop cv.pdf into /public/
-  Locale detection broken           ⚠️ Med     Rename proxy.ts → middleware.ts
+  Custom domain DNS pending         ⚠️ Med     Cloudflare DNS → Vercel (see README)
   Domain not configured in Vercel   ⚠️ Med     Verify luisaguilaraguila.com in Vercel dashboard
   No contact form backend           ⚠️ Med     Links to email/GitHub work; form is future Phase 4
   Private projects with no images   ⚠️ Med     Procedural fallbacks render, but less impactful
@@ -580,7 +579,7 @@ A recruiter-optimized personal portfolio for Luis Aguilar (Business Management E
 ### Pending
 - [ ] Drop `public/avatar.jpg` (real photo) ← user · S
 - [ ] Drop `public/cv.pdf` ← user · S
-- [ ] Rename `src/proxy.ts` → `src/middleware.ts` ← auto · S
+- [ ] Cloudflare DNS → Vercel (CNAME www + A @) ← user · S
 - [ ] Add `src/app/sitemap.ts` ← auto · S
 - [ ] Add `src/app/robots.ts` ← auto · S
 - [ ] Remove obsolete `transpilePackages: ["three"]` from `next.config.ts` ← auto · S
@@ -604,6 +603,8 @@ A recruiter-optimized personal portfolio for Luis Aguilar (Business Management E
 
 | Date | Action | Impact |
 |------|--------|--------|
+| 2026-05-15 | Vercel linked + production deploy Ready | Deploy 80% → 90% |
+| 2026-05-15 | CI green after DotField ESLint fix | CI passing |
 | 2026-05-15 | First /track scan — INFRASTRUCTURE_STATUS.md created | Dashboard baseline at 65% |
 | 2026-05-02 | feat: migrate best-of-remote + enrich portfolio content | Content 85% → 95% |
 | 2026-05-02 | feat: portfolio audit — sprints 1+2 + interactive backgrounds | Core sections complete |
@@ -624,9 +625,9 @@ A recruiter-optimized personal portfolio for Luis Aguilar (Business Management E
 
 | Date | Learning | Context |
 |------|----------|---------|
-| 2026-05-15 | next-intl middleware must be at `src/middleware.ts` (not proxy.ts) | Scan found middleware at wrong path — locale detection broken |
+| 2026-05-15 | Next.js 16 uses `src/proxy.ts` not `middleware.ts` for next-intl | Vercel build warning clarified naming |
 | 2026-05-15 | Portfolio with missing avatar + CV creates broken recruiter experience | Assets are the most critical deliverable for a portfolio site |
 
 ---
 
-<!-- scan:e19be29 -->
+<!-- scan:6735b5a -->
