@@ -43,7 +43,7 @@ export default function DotField({
       "(hover: none), (pointer: coarse)"
     ).matches;
 
-    let dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     let dots: Dot[] = [];
     let width = 0;
     let height = 0;
