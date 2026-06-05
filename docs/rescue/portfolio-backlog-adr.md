@@ -15,7 +15,7 @@ Este documento define el backlog priorizado de mejoras para luisaguilaraguila.co
 |                                                                                   |
 | Reclutadores técnicos y no técnicos en empresas de tecnología, SaaS y consultoría |
 |                                                                                   |
-| Clientes potenciales que buscan automatización de procesos y sistemas de negocio  |
+| Clientes potenciales que buscan automatización de procesos y sistemas de negocio (descripción genérica; sin nombres reales)  |
 |                                                                                   |
 | Colaboradores técnicos que evalúan capacidades de arquitectura e implementación   |
 +-----------------------------------------------------------------------------------+
@@ -176,7 +176,7 @@ Reemplazar \'4+ Projects\', \'3+ Industries\', \'10+ Tools\' por métricas verif
 
 -   38 API routes migradas a enrichAudit() en LEC Platform
 
--   2 clientes activos (LEC, Chiles Secos Andrade)
+-   2 clientes activos ([CLIENTE REDACTADO], [CLIENTE REDACTADO])
 
 -   12+ workflows de n8n operativos
 
