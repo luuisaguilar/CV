@@ -202,7 +202,7 @@ Sección nueva entre Skills y Projects llamada \'Automatizaciones\' con 4 casos 
 
 -   Monitor de disponibilidad con alertas --- webhook Cloudflare → n8n → Telegram
 
-**IMPORTANTE: No exponer la URL n8n.luisaguilaraguila.com. Mostrar screenshots del editor de workflows, no la URL de acceso.**
+**IMPORTANTE: No exponer la URL [internal n8n production hostname redacted]. Mostrar screenshots del editor de workflows, no la URL de acceso.**
 
 **PF-11 --- Grafo de nodos conectados**
 
@@ -325,7 +325,7 @@ Los ADRs documentan decisiones de diseño y arquitectura con impacto significati
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Contexto**                                                                                                                                                                                               |
 |                                                                                                                                                                                                            |
-| El perfil tiene n8n operativo en producción en n8n.luisaguilaraguila.com. La pregunta es cómo comunicar esta capacidad: link directo al subdominio, screenshots del editor, o descripción de casos de uso. |
+| El perfil tiene n8n operativo en producción en [internal n8n production hostname redacted]. La pregunta es cómo comunicar esta capacidad: link directo al subdominio, screenshots del editor, o descripción de casos de uso. |
 |                                                                                                                                                                                                            |
 | **Decisión**                                                                                                                                                                                               |
 |                                                                                                                                                                                                            |
